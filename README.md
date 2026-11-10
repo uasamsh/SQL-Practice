@@ -7,7 +7,7 @@ This repository contains my SQL practice work as I learn SQL through LinkedIn Le
 - DB Browser for SQLite
 
 ## Topics Covered
-- SQL Basics
+- SQL 
 - Database Tables
 - SELECT Statements
 - Filtering and Sorting Data
