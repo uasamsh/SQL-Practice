@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ushah/OneDrive/Desktop/LIknedin SQL Exercise FILES and URL/Exercise Files/WSDA_Music.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="4026"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="2" parent="0"/><expanded_item id="4" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Invoice" custom_title="0" dock_id="1" table="4,7:mainInvoice"/><dock_state state="000000ff00000000fd00000001000000020000077400000386fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000007740000012400ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="56"/><column index="2" value="280"/><column index="3" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Customer" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="11" mode="0"/></sort><column_widths><column index="1" value="74"/><column index="2" value="78"/><column index="3" value="101"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="156"/><column index="7" value="54"/><column index="8" value="117"/><column index="9" value="85"/><column index="10" value="156"/><column index="11" value="148"/><column index="12" value="234"/><column index="13" value="88"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="74"/><column index="2" value="70"/><column index="3" value="70"/><column index="4" value="156"/><column index="5" value="67"/><column index="6" value="156"/><column index="7" value="156"/><column index="8" value="218"/><column index="9" value="85"/><column index="10" value="38"/><column index="11" value="54"/><column index="12" value="70"/><column index="13" value="140"/><column index="14" value="140"/><column index="15" value="195"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="62"/><column index="2" value="76"/><column index="3" value="156"/><column index="4" value="300"/><column index="5" value="156"/><column index="6" value="72"/><column index="7" value="117"/><column index="8" value="105"/><column index="9" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Playlist" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="61"/><column index="2" value="210"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 3">-- How many customers purchased two songs at $0.99 each?
+
+/*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: Customers who purchased two songs at $0.99 each
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   
+-- FROM
+--  Invoice
+--  
+-- WHERE
+--  total = 1.98
+-- order by 
+--   InvoiceDate
+  
+  /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices exists between $1.98 and $5.00?
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   
+-- FROM
+--  Invoice
+--  
+-- WHERE
+--  total between 1.98 AND 5.00
+-- order by 
+--   total
+
+/*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices exists between $1.98 or $3.96?
+*/
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   
+-- FROM
+--  Invoice
+--  
+-- WHERE
+--  total IN (1.98,3.96)
+-- order by 
+--   total
+  
+  
+/*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices were billed to the city of Brussels?
+*/
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   
+-- FROM
+--  Invoice
+--  
+-- WHERE
+--  BillingCity = 'Brussels'
+-- order by 
+--   total
+  
+  /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices were billed in cities of Brussels, Oriando or Paris?
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE
+--  BillingCity IN('Brussels', 'Oriando','Paris')
+-- order by 
+--   total
+
+-- 5) Like using for partial values
+ /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices were billed in  cities that starts with B?
+*/
+-- % is a wild wlid card character like a junction with like operator , the % sign saying I don't care what comes next after B we just needs the cities that starts with B.
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE
+--  BillingCity LIKE 'B%'
+-- order by 
+--   total
+  
+  -- 6) Like using for partial values
+ /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices were billed in  cities that B anywhere in it's name?
+*/
+-- % i don't care before the B and after the B i just do care that there's a B somewhere in the billing city field using %B%.
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE
+--  BillingCity LIKE '%B%'
+-- order by 
+--   total
+
+  -- 7) In the Invoice table, Data structure, the InvoiceDate column uses the DATETIME data type. When checking the data, the date for May 22, 2010 appears as 2010-05-22 00:00:00, which includes the time component like this 00:00:00.
+ /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: How maany invoices were billed on 2010-05-22 00:00:00.?
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  -- 2 methods avalaible, results will be same
+--  WHERE
+-- InvoiceDate = '2010-05-22 00:00:00'
+-- /* WHERE 
+-- DATE (InvoiceDate)'2010-05-22' */
+-- order by   total
+
+-- 8) Using AND 
+ /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: Get a list of invoices were billed after  2010-05-22 and have a total of less than $3.00..?
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE 
+-- DATE (InvoiceDate)&gt;'2010-05-22' AND total &lt;3.00
+-- ORDER BY 
+-- InvoiceDate
+
+ -- 9) Using  OR operators, for % partial search using LIKE 
+ 
+  /*
+Created By: Uzma Ejaz
+Date: 11/9/2026
+Description: Get a list of invoices who's billing city starts with p or satrts with d?
+*/
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE 
+-- BillingCity LIKE 'P%' OR BillingCity LIKE'D%'
+-- ORDER BY 
+-- BillingCity
+
+-- 10) Using  OR operators, for % partial search using LIKE 
+ 
+ -- Description: Get a list of invoices that are greate then 1.98 from any cities that starts with P or starts with D.
+
+-- Order of operations is called PEMDAS () , BEMDAS [], Without using PEMDAS () , BEMDAS [] operations look at the out put there is in total column 0.99 exists in Dublin , Dijon, so NOW we use PEMDAS () , BEMDAS [] operations
+--PEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
+--BEMDAS - Brackets, Exponents, Multiplication/Division, Addition/Subtraction
+
+-- SELECT
+--   InvoiceDate,
+--   BillingAddress,
+--   BillingCity,
+--   total
+--   FROM
+--  Invoice
+--  WHERE 
+-- -- total&gt; 1.98 AND  BillingCity LIKE 'P%' OR BillingCity LIKE'D%'
+-- total&gt; 1.98 AND (BillingCity LIKE 'P%' OR BillingCity LIKE'D%')
+-- ORDER BY 
+-- total
+
+-- 11 
+/*
+WSDA Sales Goal:
+They want as many customers as possible to spend between $7.00 and $15.00
+
+Sales Categories:
+A Baseline Purchase - Between $0.99 and $1.99
+Low Purchase - Between $2.00 and $6.99
+Target Purchase - Between $7.00 and $15.00
+Top Performer - Above $15.00
+*/
+
+SELECT
+  InvoiceDate,
+  BillingAddress,
+  BillingCity,
+  total
+  FROM
+ Invoice
+ORDEr BY 
+BillingCity</sql><sql name="Task 1">/*
+TASK 1: WSDA Music - Customer Contact Directory
+
+PROJECT OVERVIEW:
+Create a customer contact list for the WSDA Music sales team.
+The report will help organize customer information for outreach.
+
+OBJECTIVE:
+Retrieve the first 10 customers, sorted alphabetically
+by their last names.
+
+REQUIRED OUTPUT:
+The report should display 5 columns and 10 rows.
+
+1. First Name    - Customer's first name
+2. Last Name     - Customer's last name
+3. City          - Customer's city
+4. Country       - Customer's country
+5. Email Address - Customer's email address
+
+TASK REQUIREMENTS:
+- Retrieve customer information from the Customer table.
+- Display five required columns.
+- Use clear, readable column names.
+- Sort customers alphabetically by last name.
+- Return only the first 10 records.
+- Use double quotes for column aliases containing spaces.
+
+SQL CONCEPTS PRACTICED:
+SELECT, FROM, AS, ORDER BY, ASC, LIMIT
+
+EXPECTED RESULT:
+10 customer records with 5 columns.
+*/
+
+SELECT
+    FirstName AS &quot;First Name&quot;,
+    LastName AS &quot;Last Name&quot;,
+    City AS &quot;City&quot;,
+    Country AS &quot;Country&quot;,
+    Email AS &quot;Email Address&quot;
+FROM Customer
+ORDER BY LastName ASC
+LIMIT 10;</sql><current_tab id="1"/></tab_sql></sqlb_project>
