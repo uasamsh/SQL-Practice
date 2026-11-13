@@ -1,37 +1,75 @@
 
 
-High Value Invoice Report. The company's finance team wants to identify invoices that performed above the company average.
+/*  # The Music Company – High-Value Invoice Analysis
 
- Rather than calculating the average separately and hardcoding it into the query, 
+The Music Company's finance department needs a report showing invoices with totals higher than the overall average.
 
- they want a dynamic solution; one that calculates the average automatically and uses it as the filter threshold.That's a subquery problem.
+Instead of entering a fixed average amount, the SQL query should calculate the average directly from the data. This way, the report will still work correctly if invoice amounts change.
 
- The inner query calculates the average. The outer query uses it to filter.
+A **subquery** will be used for this task. It calculates the average invoice amount, while the main query finds invoices that are above that average.
 
- Your Task: Write a SQL query that returns all invoices with a total above the global average invoice total.Result:
+## Your Task
 
- Your output should contain 4 columns and 7 rows:
+Create a SQL query that displays invoices with a total amount greater than the average invoice value across the entire company.
 
- InvoiceId 
+## Expected Result
 
- - the invoice ID BillingCity 
+The report should return **7 rows and 4 columns**.
 
- - the city the invoice was billed to BillingCountry 
+- **InvoiceId:** A unique number identifying each invoice.
+- **BillingCity:** The city where the invoice was billed.
+- **BillingCountry:** The country associated with the invoice.
+- **Total:** The total amount charged on the invoice.
 
- - the country the invoice was billed to
+## Requirements
 
- - the invoice total. Requirements: Select from the Invoice table. Use a subquery in the WHERE clause to calculate the average:
+1. Retrieve the information from the `Invoice` table.
+2. Calculate the average invoice amount using a subquery inside the `WHERE` clause.
+3. Show only invoices where `Total` is greater than the calculated average.
+4. Remove records where `BillingCountry` is `NULL`.
+5. Arrange the results from the highest invoice total to the lowest.
+6. Add a short SQL comment explaining what the query does.
 
- (SELECT AVG(Total) FROM Invoice)Filter to invoices where Total &gt; the subquery result. Exclude records where BillingCountry IS NULL. Sort by Total descending. Include a comment stating the query's purpose. Constraints and Hints:
+## Guidelines and Helpful Tips
 
- Table to use: InvoiceFields (InvoiceId, BillingCity, BillingCountry, Total). The subquery goes inside the WHERE clause after the> operator. Run the inner query alone first to confirm it returns a single value: SELECT AVG(Total) FROM Invoice. The average of the seeded invoices is approximately $4.70 
+- **Table:** `Invoice`
+- **Required columns:** `InvoiceId`, `BillingCity`, `BillingCountry`, `Total`
+- Place the subquery inside the `WHERE` condition after the `>` operator.
+- Start by calculating the average separately to understand the result.
 
- - Every row in your result should have a Total above this. Filter:
+**Calculate the average:**
 
- WHERE Total &gt; (SELECT AVG(Total) FROM Invoice) AND BillingCountry IS NOT NULL Sort: ORDER BY Total DESC  
+`SELECT AVG(Total) FROM Invoice;`
 
- Expected output:InvoiceIdBillingCityBillingCountryTotal5New YorkUSA13.8612StuttgartGermany13.864EdmontonCanada8.9111VancouverCanada8.913BrusselsBelgium5.9410Rio de JaneiroBrazil5.9418MontréalCanada5.94(7 rows total, sorted by Total descending) 
+The average invoice amount in this dataset is approximately **$4.70**.
 
+Your final report should include invoices with totals greater than this amount.
+
+**Use these SQL conditions:**
+
+`WHERE Total > (SELECT AVG(Total) FROM Invoice)`
+
+`AND BillingCountry IS NOT NULL`
+
+**Sorting:**
+
+`ORDER BY Total DESC`
+
+## Expected Output
+
+| InvoiceId | BillingCity | BillingCountry | Total |
+
+| 5        | New York      | USA           | 13.86 |
+| 12       | Stuttgart     | Germany       | 13.86 |
+| 4        | Edmonton      | Canada        | 8.91 |
+| 11       | Vancouver     | Canada        | 8.91 |
+| 3        | Brussels      | Belgium       | 5.94 |
+| 10       | Rio de Janeiro| Brazil        | 5.94 |
+| 18       | Montréal      | Canada        | 5.94 |
+
+**Total Results:** 7 rows and 4 columns.
+
+The report should display the invoices in descending order, starting with the highest total.
 */
 SELECT
 
