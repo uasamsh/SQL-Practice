@@ -1,26 +1,22 @@
 
 
-/*WSDA Music – Active Market Revenue Report
+/*The  Music Company Active Market Revenue Report
 
-WSDA Music's leadership team wants to understand which countries are generating meaningful sales volume. They only want to see countries with at least 2 invoices; markets that have demonstrated consistent activity, along with a total invoice count and total revenue for each.
-
-
+The  Music Company's leadership team wants to understand which countries are generating meaningful sales volume. They only want to see countries with at least 2 invoices, markets that have demonstrated consistent activity, along with a total invoice count and total revenue for each.
 
 Your job is to group the invoice data by country, filter out low-activity markets, and present the results ranked by revenue.
 
-Your Task:
+ Task:
 
 Write a SQL query that produces the active market revenue report.
 
-Result:
+ The output should contain 3 columns and 5 rows:
 
-Your output should contain 3 columns and 5 rows:
+BillingCountry – the country the invoice was billed to
 
-- BillingCountry – the country the invoice was billed to
+InvoiceCount – total number of invoices for that country
 
-- InvoiceCount – total number of invoices for that country
-
-- TotalRevenue – total revenue rounded to 2 decimal places
+TotalRevenue – total revenue rounded to 2 decimal places
 
 Requirements:
 
@@ -30,7 +26,7 @@ Requirements:
 
 - Use WHERE BillingCountry IS NOT NULL to exclude null country records.
 
-- Use GROUP BY on BillingCountry.
+- Use GROUP BY BillingCountry.
 
 - Use HAVING to filter to countries with 2 or more invoices.
 
@@ -85,6 +81,6 @@ WHERE BillingCountry IS NOT NULL
 
 GROUP BY BillingCountry
 
-HAVING COUNT(InvoiceId) &gt;= 2
+HAVING COUNT(InvoiceId) >= 2
 
-ORDER BY TotalRevenue DESC</sql><current_tab id="0"/></tab_sql></sqlb_project>
+ORDER BY TotalRevenue
