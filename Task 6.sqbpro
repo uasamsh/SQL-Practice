@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ushah/OneDrive/Desktop/LIknedin SQL Exercise FILES and URL/WSDA_Music.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="4026"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Invoice" custom_title="0" dock_id="1" table="4,7:mainInvoice"/><dock_state state="000000ff00000000fd0000000100000002000005bc0000038efc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005bc0000012400ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="56"/><column index="2" value="280"/><column index="3" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="62"/><column index="2" value="76"/><column index="3" value="156"/><column index="4" value="300"/><column index="5" value="156"/><column index="6" value="72"/><column index="7" value="117"/><column index="8" value="105"/><column index="9" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="InvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="85"/><column index="2" value="64"/><column index="3" value="53"/><column index="4" value="59"/><column index="5" value="56"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="51"/><column index="2" value="195"/><column index="3" value="58"/><column index="4" value="83"/><column index="5" value="56"/><column index="6" value="241"/><column index="7" value="76"/><column index="8" value="85"/><column index="9" value="59"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="TASK 6">/*
+High Value Invoice ReportThe company's finance team wants to identify invoices that performed above the company average.
+ Rather than calculating the average separately and hardcoding it into the query, 
+ they want a dynamic solution; one that calculates the average automatically and uses it as the filter threshold.That's a subquery problem.
+ The inner query calculates the average. The outer query uses it to filter.
+ Your Task:Write a SQL query that returns all invoices with a total above the global average invoice total.Result:
+ Your output should contain 4 columns and 7 rows:
+ InvoiceId 
+ - the invoice IDBillingCity 
+ - the city the invoice was billed toBillingCountry 
+ - the country the invoice was billed toTotal
+ - the invoice totalRequirements:Select from the Invoice tableUse a subquery in the WHERE clause to calculate the average:
+ (SELECT AVG(Total) FROM Invoice)Filter to invoices where Total &gt; the subquery resultExclude records where BillingCountry IS NULLSort by Total descendingInclude a comment stating the purpose of the queryConstraints and Hints:
+ Table to use: InvoiceFields: InvoiceId, BillingCity, BillingCountry, TotalSubquery goes inside the WHERE clause after the &gt; operatorRun the inner query alone first to confirm it returns a single value: SELECT AVG(Total) FROM InvoiceThe average of the seeded invoices is approximately $4.70 
+ - every row in your result should have a Total above thisFilter:
+ WHERE Total &gt; (SELECT AVG(Total) FROM Invoice) AND BillingCountry IS NOT NULLSort: ORDER BY Total DESC  
+ Expected output:InvoiceIdBillingCityBillingCountryTotal5New YorkUSA13.8612StuttgartGermany13.864EdmontonCanada8.9111VancouverCanada8.913BrusselsBelgium5.9410Rio de JaneiroBrazil5.9418MontréalCanada5.94(7 rows total, sorted by Total descending) 
+
+*/
+
+SELECT
+   InvoiceId,
+   BillingCity,
+   BillingCountry,
+   Total
+FROM Invoice
+
+WHERE Total &gt; (SELECT AVG(Total) From Invoice)
+AND BillingCountry IS NOT NULL
+
+ORDER BY Total DESC</sql><current_tab id="0"/></tab_sql></sqlb_project>
