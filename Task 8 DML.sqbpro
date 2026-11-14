@@ -1,0 +1,36 @@
+
+-- Uzma Ejaz
+
+-- 11/13/2026
+
+-- Description: Genre Table Management
+
+-- Pre-check: confirm 'Acoustic' does not already exist
+
+SELECT * 
+FROM Genre 
+WHERE Name = 'Acoustic';
+
+
+-- INSERT the new genre
+INSERT INTO Genre (Name) 
+VALUES ('Acoustic');
+
+-- UPDATE the name per style guide
+
+UPDATE Genre 
+SET Name = 'Acoustic Folk' 
+WHERE Name = 'Acoustic';
+
+-- Final confirmation: show the updated record
+
+SELECT * 
+FROM Genre 
+WHERE Name = 'Acoustic Folk';
+
+-- Delete the genre
+
+DELETE FROM
+Genre
+WHERE Name = 'Acoustic Folk';
+
