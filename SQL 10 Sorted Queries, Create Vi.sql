@@ -1,4 +1,4 @@
--- SQL 10 Sorted Queries, Create View Edit JOINS and Delete views
+-- SQL 10: Sorted Queries, Create View, Edit JOINS, and Delete Views
 /*
  Description: 
 View: A saved SQL query that can be reused whenever needed or used in other SQL queries.
@@ -72,7 +72,7 @@ INNER JOIN Track t
 	
 	
 -- 	
---2nd Method Description: Retrieve specific invoice and track columns,  FROM the V_TracksInvoiceLine VIEW Created for join 3 tables.
+--2nd Method Description: Retrieve specific invoice and track columns  FROM the V_TracksInvoiceLine VIEW Created for joining 3 tables.
 -- Description: Query specific columns directly from the saved V_TracksInvoiceLine virtual table (view) without repeating the JOIN.
 SELECT
     InvoiceId,
@@ -97,6 +97,6 @@ INNER JOIN
  -- DELETE views 
  -- DROP VIEW IF EXISTS "main"."V_AvgTotal";
  
- DROP VIEW V_AvgTotal -- Now execute/RUN this query to DELETE view
+ DROP VIEW V_AvgTotal; -- Now execute/RUN this query to DELETE view
  
 	
