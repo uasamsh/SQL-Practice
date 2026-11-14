@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ushah/OneDrive/Desktop/LIknedin SQL Exercise FILES and URL/WSDA_Music.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="4026"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="V_AvgTotal" custom_title="0" dock_id="1" table="4,10:mainV_AvgTotal"/><table title="V_EmployeeDirectory" custom_title="0" dock_id="2" table="4,19:mainV_EmployeeDirectory"/><dock_state state="000000ff00000000fd0000000100000002000005bc0000038efc0100000001fc00000000000005bc0000011800fffffffa000000010100000002fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011800fffffffb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000011800ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="56"/><column index="2" value="280"/><column index="3" value="53"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employee" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="74"/><column index="2" value="70"/><column index="3" value="70"/><column index="4" value="156"/><column index="5" value="67"/><column index="6" value="156"/><column index="7" value="156"/><column index="8" value="218"/><column index="9" value="85"/><column index="10" value="38"/><column index="11" value="54"/><column index="12" value="70"/><column index="13" value="140"/><column index="14" value="140"/><column index="15" value="195"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invoice" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="1" mode="1"/></sort><column_widths><column index="1" value="62"/><column index="2" value="76"/><column index="3" value="156"/><column index="4" value="300"/><column index="5" value="156"/><column index="6" value="72"/><column index="7" value="117"/><column index="8" value="105"/><column index="9" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="InvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="85"/><column index="2" value="64"/><column index="3" value="53"/><column index="4" value="59"/><column index="5" value="56"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Track" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="51"/><column index="2" value="195"/><column index="3" value="58"/><column index="4" value="83"/><column index="5" value="56"/><column index="6" value="241"/><column index="7" value="76"/><column index="8" value="85"/><column index="9" value="59"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="V_AvgTotal" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="93"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="V_CustomerInvoices" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="78"/><column index="2" value="101"/><column index="3" value="62"/><column index="4" value="156"/><column index="5" value="156"/><column index="6" value="62"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="V_EmployeeDirectory" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="74"/><column index="2" value="132"/><column index="3" value="156"/><column index="4" value="85"/><column index="5" value="195"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="V_TracksInvoiceLine" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="62"/><column index="2" value="59"/><column index="3" value="56"/><column index="4" value="187"/><column index="5" value="257"/><column index="6" value="76"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 10">
+ -- Edit views 
+-- Now we can use VIEW to join and save tables like V_CustomerInvoices 
+
+-- Description: Create a view that combines customer names with their invoice details using an INNER JOIN.
+
+CREATE VIEW V_CustomerInvoices AS
+SELECT 
+    c.CustomerId,
+    c.FirstName,
+    c.LastName,
+    i.InvoiceId,
+    i.InvoiceDate,
+    i.BillingCity,
+    i.Total
+FROM Invoice AS i
+INNER JOIN Customer AS c
+ ON i.CustomerId = c.CustomerId;
+ 
+ 
+-- Description: Retrieve all customer invoice records for New York from the saved view. 
+ SELECT *
+ FROM V_CustomerInvoices
+ WHERE BillingCity = 'New York'
+ 
+-- JOINS views V_CustomerInvoices and 
+ -- Description: Create a view that joins invoice line items with track details using an INNER JOIN and deleting VIEW.
+ CREATE VIEW V_TracksInvoiceLine AS
+SELECT
+    il.InvoiceId,
+    il.UnitPrice,
+    il.Quantity,
+    t.Name,
+    t.Composer,
+    t.Milliseconds
+FROM
+    InvoiceLine AS il
+INNER JOIN
+    Track AS t
+ON
+    il.TrackId = t.TrackId;
+	
+-- 1st Method Description: Join four tables (Customer, Invoice, InvoiceLine, and Track) to view customer purchases with track names.
+
+SELECT 
+    c.FirstName,
+    c.LastName,
+    i.InvoiceDate,
+    t.Name AS TrackName,
+    il.UnitPrice
+FROM Customer c
+INNER JOIN Invoice i 
+    ON c.CustomerId = i.CustomerId
+INNER JOIN InvoiceLine il 
+    ON i.InvoiceId = il.InvoiceId
+INNER JOIN Track t 
+    ON il.TrackId = t.TrackId;
+	
+	
+-- 	
+--2nd Method Description: Retrieve specific invoice and track columns,  FROM the V_TracksInvoiceLine VIEW Created for join 3 tables.
+-- Description: Query specific columns directly from the saved V_TracksInvoiceLine virtual table (view) without repeating the JOIN.
+SELECT
+    InvoiceId,
+    UnitPrice,
+    Quantity,
+    Name
+FROM
+    V_TracksInvoiceLine;
+SELECT
+    tl.InvoiceId,
+    tl.UnitPrice,
+    tl.Quantity,
+    tl.Name,
+	i.BillingAddress,
+	i.Total
+FROM
+    V_TracksInvoiceLine AS tl
+INNER JOIN
+ Invoice AS i
+ ON tl.InvoiceId = i.InvoiceId
+ 
+ -- DELETE views 
+ -- DROP VIEW IF EXISTS &quot;main&quot;.&quot;V_AvgTotal&quot;;
+ 
+ DROP VIEW V_AvgTotal -- Now execute/RUN this query to DELETE view
+ 
+	</sql><sql name="Edit View V_AvgTotal">DROP VIEW IF EXISTS &quot;main&quot;.&quot;V_AvgTotal&quot;;
+CREATE VIEW V_AvgTotal AS
+SELECT
+ AVG(Total)AS [Average TOTAL]
+ FROM
+ Invoice</sql><sql name="Task 7">/*  # The Music Company – Employee Directory View
+
+The Music Company's HR department regularly needs employee information for different reports. This includes employee names, job titles, cities, and email addresses.
+
+Instead of writing the same SQL query every time, the company wants to create a reusable **SQL View** that stores the employee directory query.
+
+The task is to create this view and then retrieve its records.
+
+## Your Task
+
+Write two SQL statements:
+
+1. **CREATE VIEW:** Create a view that displays employee directory information.
+2. **SELECT:** Retrieve employee records from the saved view.
+
+## Expected Result
+
+The view should display **8 rows and 5 columns**.
+
+- **EmployeeId:** The unique ID assigned to each employee.
+- **FullName:** The employee's first and last name combined with a space.
+- **Title:** The employee's job position.
+- **City:** The city where the employee works.
+- **Email:** The employee's email address.
+
+## Requirements
+
+1. Create a view named `V_EmployeeDirectory`.
+2. Combine `FirstName` and `LastName` using `||` with a space between them.
+3. Retrieve employee details from the `Employee` table.
+4. Sort employee records alphabetically by `LastName` within the view.
+5. After creating the view, use `SELECT * FROM V_EmployeeDirectory` to display the records.
+6. Add a short SQL comment explaining the purpose of the query.
+
+## Guidelines and Helpful Tips
+
+- **Source table:** `Employee`
+- **Required fields:** `EmployeeId`, `FirstName`, `LastName`, `Title`, `City`, `Email`
+- **Full name format:** `FirstName || ' ' || LastName AS FullName`
+- **View creation:** Use `CREATE VIEW V_EmployeeDirectory AS SELECT ...`
+- **Expected result:** 8 employee records.
+
+Once the view has been created, run the following statement to see its contents:
+
+`SELECT * FROM V_EmployeeDirectory;`
+
+## Expected Output
+
+| EmployeeId | FullName | Title | City | Email |
+|:---:|:---|:---|:---|:---|
+| 1 | Andrew Adams | General Manager | Edmonton | andrew@chinookcorp.com |
+| 8 | Laura Callahan | IT Staff | Lethbridge | laura@chinookcorp.com |
+| 2 | Nancy Edwards | Sales Manager | Calgary | nancy@chinookcorp.com |
+| 5 | Steve Johnson | Sales Support Agent | Calgary | steve@chinookcorp.com |
+| 7 | Robert King | IT Staff | Lethbridge | robert@chinookcorp.com |
+| 6 | Michael Mitchell | IT Manager | Calgary | michael@chinookcorp.com |
+| 4 | Margaret Park | Sales Support Agent | Calgary | margaret@chinookcorp.com |
+| 3 | Jane Peacock | Sales Support Agent | Calgary | jane@chinookcorp.com |
+
+**Total Results:** 8 rows and 5 columns.
+
+**Sorting:** Employee records are arranged alphabetically by their last names.
+*/
+
+CREATE VIEW V_EmployeeDirectory AS
+SELECT
+    EmployeeId,
+    FirstName ||' '|| LastName AS FullName,
+    Title,
+    City,
+    Email
+
+FROM Employee
+
+ORDER BY LastName;
+
+-- Now query the view
+SELECT * FROM V_EmployeeDirectory;</sql><current_tab id="2"/></tab_sql></sqlb_project>
